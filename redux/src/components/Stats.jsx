@@ -1,5 +1,6 @@
 import { Paper, Typography } from '@mui/material'
 
+// eslint-disable-next-line react/prop-types
 const Stats = ({ count }) => {
   return (
     <Paper sx={{ p: 3, my: 5 }} elevation={5}>
