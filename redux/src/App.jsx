@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import { useState } from 'react'
 import Counter from './components/Counter'
 import Stats from './components/Stats'
@@ -35,6 +35,9 @@ const App = () => {
 
   return (
     <Container maxWidth='lg'>
+      <Typography variant='h2' align='center' gutterBottom>
+        Counter App
+      </Typography>
       {state.map((count, index) => (
         <Counter
           key={index}
