@@ -1,32 +1,20 @@
 import { Box, Button, Paper, Typography } from '@mui/material'
-import { useState } from 'react'
 
 const Counter = () => {
-  const [count, setCount] = useState(0)
-
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1)
-  }
-
-  const decrement = () => {
-    setCount((prevCount) => prevCount - 1)
-  }
-
   return (
     <Box>
-      <Paper sx={{ p: 2, m: 5 }} elevation={3}>
+      <Paper sx={{ p: 2, m: 5 }} elevation={2}>
         <Typography
-          variant='h1'
+          variant='h2'
           gutterBottom
           sx={{ display: 'flex', justifyContent: 'center' }}>
-          {count}
+          0
         </Typography>
-
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Button variant='contained' color='primary' onClick={increment}>
+          <Button variant='contained' color='primary'>
             +
           </Button>
-          <Button variant='contained' color='warning' onClick={decrement}>
+          <Button variant='contained' color='warning'>
             -
           </Button>
         </Box>
