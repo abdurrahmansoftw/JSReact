@@ -1,8 +1,11 @@
+import { Container } from '@mui/material'
+import Counter from './components/Counter'
+
 const App = () => {
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-    </div>
+    <Container maxWidth='lg'>
+      <Counter />
+    </Container>
   )
 }
 
