@@ -1,22 +1,16 @@
-import { Box, Button, Paper, Typography } from '@mui/material'
+import { Box, Paper } from '@mui/material'
+import Buttons from './Buttons'
+import Count from './Count'
 
-const Counter = () => {
+// eslint-disable-next-line react/prop-types
+const Counter = ({ id, increment, decrement, count }) => {
   return (
     <Box>
       <Paper sx={{ p: 2, m: 5 }} elevation={2}>
-        <Typography
-          variant='h2'
-          gutterBottom
-          sx={{ display: 'flex', justifyContent: 'center' }}>
-          0
-        </Typography>
+        <Count count={count} />
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Button variant='contained' color='primary'>
-            +
-          </Button>
-          <Button variant='contained' color='warning'>
-            -
-          </Button>
+          <Buttons handler={() => increment(id)}> + </Buttons>
+          <Buttons handler={() => decrement(id)}> - </Buttons>
         </Box>
       </Paper>
     </Box>
