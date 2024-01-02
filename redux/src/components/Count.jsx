@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 const Count = ({ count }) => {
   return (
     <Typography
-      variant='h2'
+      variant='h1'
       gutterBottom
       sx={{ display: 'flex', justifyContent: 'center' }}>
       {count}
