@@ -1,21 +1,12 @@
-const person = {
-  name: 'John Doe',
-  age: 25,
-  adress: {
-    street: 'Main Street',
-    number: 100,
-    city: 'New York',
-  },
-}
-const updated = {
-  ...person,
-  adress: {
-    ...person.adress,
-    city: 'San Francisco',
-  },
+import store from './store'
 
-  name: 'akaid',
-}
-updated.adress.city = 'San Francisco'
+store.subscribe(() => {
+  console.log('Store changed!', store.getState())
+})
 
-console.log(person)
+store.dispatch({
+  type: 'bugAdded',
+  payload: {
+    description: 'Bug1',
+  },
+}) // { counter: 0 }
