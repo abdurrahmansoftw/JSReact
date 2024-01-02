@@ -1,14 +1,21 @@
-import { bugAdded, bugRemoved, bugResolved } from './actions'
-import store from './store'
+const person = {
+  name: 'John Doe',
+  age: 25,
+  adress: {
+    street: 'Main Street',
+    number: 100,
+    city: 'New York',
+  },
+}
+const updated = {
+  ...person,
+  adress: {
+    ...person.adress,
+    city: 'San Francisco',
+  },
 
-store.subscribe(() => {
-  console.log('Store changed!', store.getState())
-})
+  name: 'akaid',
+}
+updated.adress.city = 'San Francisco'
 
-store.dispatch(bugAdded('Bug1'))
-
-store.dispatch(bugResolved(1))
-
-store.dispatch(bugRemoved(1))
-
-console.log(store.getState())
+console.log(person)
