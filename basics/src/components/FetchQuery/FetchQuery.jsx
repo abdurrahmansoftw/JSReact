@@ -1,18 +1,4 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-
 const FetchQuery = () => {
-  const [quote, setQuote] = useState(null)
-
-  useEffect(() => {
-    const getQuote = async () => {
-      const response = await axios.get('https://api.quotable.io/random')
-      const data = await response.data
-      setQuote(data)
-    }
-    getQuote()
-  }, [])
-
   return (
     <div>
       <h1>Get Quotes using Fetch API</h1>
