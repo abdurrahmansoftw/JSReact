@@ -1,4 +1,4 @@
-import classes from "../styles/Video.module.css";
+import classes from '../styles/Video.module.css'
 
 export default function Video({ title, id, noq }) {
   return (
@@ -13,5 +13,5 @@ export default function Video({ title, id, noq }) {
         <p>Total points : {noq * 5}</p>
       </div>
     </div>
-  );
+  )
 }

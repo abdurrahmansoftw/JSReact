@@ -1,12 +1,12 @@
-import { useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { Link } from "react-router-dom";
-import useVideoList from "../hooks/useVideoList";
-import Video from "./Video";
+import { useState } from 'react'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import { Link } from 'react-router-dom'
+import useVideoList from '../hooks/useVideoList'
+import Video from './Video'
 
 export default function Videos() {
-  const [page, setPage] = useState(1);
-  const { loading, error, videos, hasMore } = useVideoList(page);
+  const [page, setPage] = useState(1)
+  const { loading, error, videos, hasMore } = useVideoList(page)
 
   return (
     <div>
@@ -14,9 +14,8 @@ export default function Videos() {
         <InfiniteScroll
           dataLength={videos.length}
           hasMore={hasMore}
-          loader="Loading..."
-          next={() => setPage(page + 8)}
-        >
+          loader='Loading...'
+          next={() => setPage(page + 8)}>
           {videos.map((video) =>
             video.noq > 0 ? (
               <Link
@@ -26,8 +25,7 @@ export default function Videos() {
                     videoTitle: video.title,
                   },
                 }}
-                key={video.youtubeID}
-              >
+                key={video.youtubeID}>
                 <Video
                   title={video.title}
                   id={video.youtubeID}
@@ -49,5 +47,5 @@ export default function Videos() {
       {error && <div>There was an error!</div>}
       {loading && <div>Loading...</div>}
     </div>
-  );
+  )
 }
