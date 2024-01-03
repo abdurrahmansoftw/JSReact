@@ -6,10 +6,16 @@ const fetcher = async (...args) => {
 }
 
 const FetchSwr = () => {
-  const { data: quote } = useSWR('https://api.quotable.io/random', fetcher)
+  const {
+    data: quote,
+    isLoading,
+    error,
+  } = useSWR('https://api.quotable.io/random', fetcher)
   return (
     <div>
       <h1>Get Quotes using Fetch API</h1>
+      {isLoading && <h3>Loading...</h3>}
+      {error && <h3>Error</h3>}
       <div>
         {quote && (
           <div>
