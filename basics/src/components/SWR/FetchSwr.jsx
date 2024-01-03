@@ -11,7 +11,7 @@ const FetchSwr = () => {
     data: quote,
     isLoading,
     error,
-  } = useSWR('https://api.quotable.io/random', fetcher)
+  } = useSWR('https://api.quotable.io/random', fetcher, { suspense: true })
   return (
     <div>
       <h1>Get Quotes using Fetch API</h1>
