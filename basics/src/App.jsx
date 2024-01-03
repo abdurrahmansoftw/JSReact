@@ -2,9 +2,14 @@ import FetchSwr from './components/SWR/FetchSwr'
 
 const App = () => {
   return (
-    <div>
+    <suspense
+      fallback={
+        <div>
+          <h1>Loading...</h1>
+        </div>
+      }>
       <FetchSwr />
-    </div>
+    </suspense>
   )
 }
 
