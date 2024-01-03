@@ -1,9 +1,9 @@
-import FetchAxios from './components/axios/FetchAxios'
+import FetchSwr from './components/SWR/FetchSwr'
 
 const App = () => {
   return (
     <div>
-      <FetchAxios />
+      <FetchSwr />
     </div>
   )
 }
