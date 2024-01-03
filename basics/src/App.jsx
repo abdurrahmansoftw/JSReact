@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import FetchQuery from './components/FetchQuery/FetchQuery'
 
@@ -23,8 +23,10 @@ const App = () => {
   }, [])
   return (
     <QueryClientProvider client={queryClient}>
-      <FetchQuery />
-      <FetchQuery />
+      <Suspense fallback={<div>loading</div>}>
+        <FetchQuery />
+        <FetchQuery />
+      </Suspense>
     </QueryClientProvider>
   )
 }
