@@ -1,4 +1,14 @@
+import { useQuery } from 'react-query'
+
 const FetchQuery = () => {
+  const { data: quote } = useQuery({
+    queryKey: 'quote',
+    queryFn: async () => {
+      const response = await fetch('https://api.quotable.io/random')
+      const data = await response.json()
+      return data
+    },
+  })
   return (
     <div>
       <h1>Get Quotes using Fetch API</h1>

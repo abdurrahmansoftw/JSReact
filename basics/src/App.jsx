@@ -18,6 +18,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <FetchQuery />
+      <FetchQuery />
     </QueryClientProvider>
   )
 }
