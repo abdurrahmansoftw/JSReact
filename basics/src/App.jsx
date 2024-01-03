@@ -15,7 +15,7 @@ const App = () => {
     getQuote()
   }, [])
   return (
-    <QueryClientProvider>
+    <QueryClientProvider client={}>
       <FetchQuery />
     </QueryClientProvider>
   )
