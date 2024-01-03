@@ -1,17 +1,12 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import useSWR from 'swr'
+
+const fetcher = async (...args) => {
+  const response = await fetch(...args)
+  return response.json()
+}
 
 const FetchSwr = () => {
-  const [quote, setQuote] = useState(null)
-
-  useEffect(() => {
-    const getQuote = async () => {
-      const response = await axios.get('https://api.quotable.io/random')
-      const data = await response.data
-      setQuote(data)
-    }
-    getQuote()
-  }, [])
+  const { data: quote } = useSWR('https://api.quotable.io/random', fetcher)
   return (
     <div>
       <h1>Get Quotes using Fetch API</h1>
