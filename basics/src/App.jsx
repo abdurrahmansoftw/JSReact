@@ -5,7 +5,13 @@ import FetchQuery from './components/FetchQuery/FetchQuery'
 
 const App = () => {
   const [quote, setQuote] = useState(null)
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+      },
+    },
+  })
 
   useEffect(() => {
     const getQuote = async () => {
