@@ -1,6 +1,6 @@
-import { Fragment } from "react";
-import classes from "../styles/Answers.module.css";
-import Checkbox from "./Checkbox";
+import { Fragment } from 'react'
+import classes from '../styles/Answers.module.css'
+import Checkbox from './Checkbox'
 
 export default function Answers({ options = [], handleChange, input }) {
   return (
@@ -34,5 +34,5 @@ export default function Answers({ options = [], handleChange, input }) {
         </Fragment>
       ))}
     </div>
-  );
+  )
 }
