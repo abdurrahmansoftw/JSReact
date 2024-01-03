@@ -2,7 +2,8 @@ import useSWR from 'swr'
 
 const fetcher = async (...args) => {
   const response = await fetch(...args)
-  return response.json()
+  const data = response.json()
+  return data
 }
 
 const FetchSwr = () => {
