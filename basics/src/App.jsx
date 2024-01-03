@@ -1,10 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import FetchQuery from './components/FetchQuery/FetchQuery'
 
 const App = () => {
   const [quote, setQuote] = useState(null)
+  const queryClient = new QueryClient()
 
   useEffect(() => {
     const getQuote = async () => {
@@ -15,7 +16,7 @@ const App = () => {
     getQuote()
   }, [])
   return (
-    <QueryClientProvider client={}>
+    <QueryClientProvider client={queryClient}>
       <FetchQuery />
     </QueryClientProvider>
   )
