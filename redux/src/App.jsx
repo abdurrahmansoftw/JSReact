@@ -1,6 +1,6 @@
 import { Container, Typography } from '@mui/material'
 import { Provider } from 'react-redux'
-import Counter from './components/Counter'
+import HooksCounter from './components/HooksCounter'
 import Stats from './components/Stats'
 import store from './redux/store'
 
@@ -12,7 +12,7 @@ const App = () => {
           Simple Counter Application
         </Typography>
 
-        <Counter id='1' />
+        <HooksCounter id='1' />
 
         <Stats />
       </Container>
