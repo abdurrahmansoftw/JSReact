@@ -6,7 +6,7 @@ import Count from './Count'
 
 // eslint-disable-next-line react/prop-types
 const HooksCounter = ({ id }) => {
-  const count = useSelector((state) => state.value)
+  const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
   const incrementHandler = () => {
