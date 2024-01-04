@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from './actionTypes'
+import { DDECREMENT, DINCREMENT, DRESET } from './actionTypes'
 
 const initialState = {
   value: 0,
@@ -6,11 +6,11 @@ const initialState = {
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case DINCREMENT:
       return { ...state, value: state.value + 1 }
-    case DECREMENT:
+    case DDECREMENT:
       return { ...state, value: state.value - 1 }
-    case RESET:
+    case DRESET:
       return { ...state, value: 0 }
     default:
       return state

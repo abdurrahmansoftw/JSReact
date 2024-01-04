@@ -1,13 +1,13 @@
-import { DECREMENT, INCREMENT, RESET } from './actionTypes'
+import { DDECREMENT, DINCREMENT, DRESET } from './actionTypes'
 
 export const increment = (value) => {
-  return { type: INCREMENT, payload: value }
+  return { type: DINCREMENT, payload: value }
 }
 
 export const decrement = (value) => {
-  return { type: DECREMENT, payload: value }
+  return { type: DDECREMENT, payload: value }
 }
 
 export const reset = () => {
-  return { type: RESET }
+  return { type: DRESET }
 }
