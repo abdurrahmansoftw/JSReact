@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import { Provider } from 'react-redux'
 import DynamicHooksCounter from './components/DynamicHooksCounter'
+import HooksCounter from './components/HooksCounter'
 import Stats from './components/Stats'
 import store from './redux/store'
 
@@ -12,6 +13,7 @@ const App = () => {
           Simple Counter Application
         </Typography>
 
+        <HooksCounter id='1' />
         <DynamicHooksCounter id='1' />
 
         <Stats />
