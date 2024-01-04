@@ -14,8 +14,9 @@ const App = () => {
           Simple Counter Application
         </Typography>
 
-        <HooksCounter id='1' />
-        <DynamicHooksCounter id='1' />
+        <HooksCounter />
+        <DynamicHooksCounter />
+        <VariableCounter />
         <VariableCounter dynamic={true} />
 
         <Stats />
