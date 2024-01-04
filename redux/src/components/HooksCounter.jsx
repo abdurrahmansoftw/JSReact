@@ -9,13 +9,13 @@ const HooksCounter = ({ id }) => {
   const count = useSelector((state) => state.value)
   const dispatch = useDispatch()
 
-  const incrementHander = (value) => {
+  const incrementHandler = (value) => {
     dispatch(increment(value))
   }
-  const decrementHander = (value) => {
+  const decrementHandler = (value) => {
     dispatch(decrement(value))
   }
-  const resetHander = () => {
+  const resetHandler = () => {
     dispatch(reset())
   }
 
@@ -24,9 +24,9 @@ const HooksCounter = ({ id }) => {
       <Paper sx={{ p: 2, my: 5 }} elevation={2}>
         <Count count={count} id={id} />
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Buttons handler={() => incrementHander(2)}> + </Buttons>
-          <Buttons handler={() => resetHander(0)}> Reset </Buttons>
-          <Buttons handler={() => decrementHander(2)}> - </Buttons>
+          <Buttons handler={() => incrementHandler(2)}> + </Buttons>
+          <Buttons handler={() => resetHandler(0)}> Reset </Buttons>
+          <Buttons handler={() => decrementHandler(2)}> - </Buttons>
         </Box>
       </Paper>
     </Box>
