@@ -1,4 +1,5 @@
 import { Box, Paper } from '@mui/material'
+import { DECREMENT, INCREMENT } from '../redux/counter/actionTypes'
 import Buttons from './Buttons'
 import Count from './Count'
 
@@ -17,4 +18,15 @@ const Counter = ({ id, increment, decrement, count }) => {
   )
 }
 
-export default Counter
+const mapStateToProps = (state) => {
+  return { count: state.value }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: () => dispatch({ type: INCREMENT }),
+    decrement: () => dispatch({ type: DECREMENT }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

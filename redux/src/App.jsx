@@ -11,17 +11,10 @@ const App = () => {
         <Typography variant='h2' align='center' gutterBottom>
           Counter App
         </Typography>
-        {state.map((count, index) => (
-          <Counter
-            key={index}
-            id={count.id}
-            count={count.count}
-            increment={increment}
-            decrement={decrement}
-          />
-        ))}
+        
+        <Counter />
 
-        <Stats count={totalCount()} />
+        <Stats />
       </Container>
     </Provider>
   )
