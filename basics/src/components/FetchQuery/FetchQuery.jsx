@@ -1,26 +1,22 @@
 import { useQuery } from 'react-query'
+import fetchQuote from './getQuete'
 
 const FetchQuery = () => {
-  const { data: quote } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: 'quote',
-    queryFn: async () => {
-      const response = await fetch('https://api.quotable.io/random')
-      const data = await response.json()
-      return data
-    },
+    queryFn: () => fetchQuote(),
   })
   return (
     <div>
-      <h1>Get Quotes using Fetch API</h1>
-      <div>
-        {quote && (
-          <div>
-            <h1>content: {quote.content}</h1>
-            <h3>author: {quote.author}</h3>
-            <h4>quote Length: {quote.length}</h4>
-          </div>
-        )}
-      </div>
+      {isLoading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
+
+      {data && (
+        <div>
+          <h1>{data[0].title}</h1>
+          <p>{data[0].body}</p>
+        </div>
+      )}
     </div>
   )
 }
