@@ -2,8 +2,8 @@ import { Box, Paper } from '@mui/material'
 import { connect } from 'react-redux'
 import { decrement, increment, reset } from '../redux/counter/actions'
 import {
+  increment as DynamicIncrement,
   decrement as dynamicDecrement,
-  increment as dynamicIncrement,
   reset as dynamicReset,
 } from '../redux/dynamicCounter/actions'
 import Buttons from './Buttons'
@@ -33,11 +33,15 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    increment: (value) =>
-      dispatch(ownProps.dynamic ? dynamicIncrement(value) : increment(value)),
-    decrement: (value) =>
-      dispatch(ownProps.dynamic ? dynamicDecrement(value) : decrement(value)),
-    reset: () => dispatch(ownProps.dynamic ? dynamicReset() : reset()),
+    increment: ownProps.dynamic
+      ? (value) => dispatch(DynamicIncrement(value))
+      : (value) => dispatch(increment(value)),
+    decrement: ownProps.dynamic
+      ? (value) => dispatch(dynamicDecrement(value))
+      : (value) => dispatch(decrement(value)),
+    reset: ownProps.dynamic
+      ? (value) => dispatch(dynamicReset(value))
+      : (value) => dispatch(reset(value)),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(VariableCounter)
