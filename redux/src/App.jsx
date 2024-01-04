@@ -9,10 +9,10 @@ const App = () => {
     <Provider store={store}>
       <Container maxWidth='lg'>
         <Typography variant='h2' align='center' gutterBottom>
-          Counter App
+          Simple Counter Application
         </Typography>
-        
-        <Counter />
+
+        <Counter id='1' />
 
         <Stats />
       </Container>
