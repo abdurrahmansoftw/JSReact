@@ -18,6 +18,12 @@ const reducer = (state = initialState, action) => {
           : todo
       )
 
+    case COLOR_SELECTED:
+      return state.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, color: action.payload.color }
+          : todo
+      )
 
     default:
       return state
