@@ -7,9 +7,9 @@ export const statusChanged = (status) => {
   }
 }
 
-export const colorChanged = (color) => {
+export const colorChanged = (color, chnageType) => {
   return {
     type: COLOR_CHANGED,
-    payload: color,
+    payload: { color, chnageType },
   }
 }
