@@ -1,5 +1,7 @@
 import {
   ADD_TODO,
+  ALL_COMPLETED_TODO,
+  CLEAR_COMPLETED,
   COLOR_SELECTED,
   DELETE_TODO,
   TOGGLE_TODO,
@@ -18,20 +20,26 @@ const reducer = (state = initialState, action) => {
 
     case TOGGLE_TODO:
       return state.map((todo) =>
-        todo.id === action.payload.id
+        todo.id === action.payload
           ? { ...todo, completed: !todo.completed }
           : todo
       )
 
     case COLOR_SELECTED:
       return state.map((todo) =>
-        todo.id === action.payload.id
+        todo.id === action.payload.todoId
           ? { ...todo, color: action.payload.color }
           : todo
       )
 
     case DELETE_TODO:
-      return state.filter((todo) => todo.id !== action.payload.id)
+      return state.filter((todo) => todo.id !== todoId)
+
+    case ALL_COMPLETED_TODO:
+      return state.map((todo) => ({ ...todo, completed: true }))
+
+    case CLEAR_COMPLETED:
+      return state.filter((todo) => !todo.completed)
 
     default:
       return state
