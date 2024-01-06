@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
       )
 
     case DELETE_TODO:
-      return state.filter((todo) => todo.id !== todoId)
+      return state.filter((todo) => todo.id !== action.payload)
 
     case ALL_COMPLETED_TODO:
       return state.map((todo) => ({ ...todo, completed: true }))
