@@ -1,4 +1,9 @@
-import { ADD_TODO, COLOR_SELECTED, TOGGLE_TODO } from './actionTypes'
+import {
+  ADD_TODO,
+  COLOR_SELECTED,
+  DELETE_TODO,
+  TOGGLE_TODO,
+} from './actionTypes'
 import { initialState } from './initialState'
 
 function nextTodoId(todos) {
@@ -24,6 +29,9 @@ const reducer = (state = initialState, action) => {
           ? { ...todo, color: action.payload.color }
           : todo
       )
+
+    case DELETE_TODO:
+      return state.filter((todo) => todo.id !== action.payload.id)
 
     default:
       return state
