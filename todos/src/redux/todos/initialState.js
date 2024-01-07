@@ -20,7 +20,7 @@ export const initialState = [
   {
     id: 4,
     text: 'Learn Redux Saga',
-    completed: false,
+    completed: true,
     color: '#02a8f3',
   },
   {
@@ -32,7 +32,7 @@ export const initialState = [
   {
     id: 6,
     text: 'Learn Redux Form',
-    completed: false,
+    completed: true,
     color: 'green',
   },
   {
@@ -44,7 +44,7 @@ export const initialState = [
   {
     id: 8,
     text: 'Learn Redux Hooks',
-    completed: false,
+    completed: true,
     color: 'red',
   },
   {
@@ -56,7 +56,7 @@ export const initialState = [
   {
     id: 10,
     text: 'Learn Redux Form',
-    completed: false,
+    completed: true,
     color: '#02a8f3',
   },
   {
