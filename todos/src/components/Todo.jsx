@@ -24,13 +24,19 @@ const Todo = ({ todo }) => {
       <div className='select-none flex-1 line-through'>{text}</div>
 
       <div
-        className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer ${
-          color === 'red' && ' border-green-500 hover:bg-green-500 bg-green-500'
+        className={`flex-shrink-0 h-4 w-4 rounded-full border-2 hover:bg-green-500 border-green-500  ml-auto cursor-pointer ${
+          color === 'green' && '  bg-green-500'
         } `}></div>
 
-      <div className='flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-yellow-500 hover:bg-yellow-500'></div>
+      <div
+        className={`flex-shrink-0 h-4 w-4 rounded-full border-yellow-500 hover:bg-yellow-500 border-2 ml-auto cursor-pointer ${
+          color === 'yellow' && '   bg-yellow-500'
+        } `}></div>
 
-      <div className='flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-red-500 hover:bg-red-500'></div>
+      <div
+        className={`flex-shrink-0 h-4 w-4 rounded-full border-2 border-red-500 ml-auto hover:bg-red-500 cursor-pointer ${
+          color === 'red' && '   bg-red-500'
+        } `}></div>
 
       <img
         src={cancelImage}
