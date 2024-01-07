@@ -26,18 +26,20 @@ const Footer = () => {
       <p>{numberOfTodos(incompleteTodos)} left</p>
       <ul className='flex space-x-1 items-center text-xs'>
         <li
-          className={`cursor-pointer ${status} === 'All' && 'font-bold' `}
+          className={`cursor-pointer ${status === 'All' && 'font-bold'}`}
           onClick={handleStatusChange('All')}>
           All
         </li>
         <li>|</li>
         <li
-          className='cursor-pointer'
+          className={`cursor-pointer ${status === 'Incomplete' && 'font-bold'}`}
           onClick={handleStatusChange('Incomplete')}>
           Incomplete
         </li>
         <li>|</li>
-        <li className='cursor-pointer' onClick={handleStatusChange('Complete')}>
+        <li
+          className={`cursor-pointer ${status === 'Complete' && 'font-bold'}`}
+          onClick={handleStatusChange('Complete')}>
           Complete
         </li>
         <li></li>
