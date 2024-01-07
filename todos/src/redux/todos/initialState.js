@@ -2,20 +2,20 @@ export const initialState = [
   {
     id: 1,
     text: 'Learn Redux',
-    completed: false,
-    color: '#02a8f3',
+    completed: true,
+    color: 'red',
   },
   {
     id: 2,
     text: 'Learn React',
     completed: false,
-    color: '#02a8f3',
+    color: 'yellow',
   },
   {
     id: 3,
     text: 'Learn React Router',
     completed: false,
-    color: '#02a8f3',
+    color: 'red',
   },
   {
     id: 4,
