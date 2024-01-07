@@ -17,7 +17,7 @@ const Header = () => {
           <img src={nodeImage} className='w-6 h-6' alt='Add todo' />
           <input
             value={input}
-            
+            onChange={handleInput}
             type='text'
             placeholder='Type your todo'
             className='w-full text-lg px-4 py-1 border-none outline-none bg-gray-100 text-gray-500'
