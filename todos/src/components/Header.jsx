@@ -1,14 +1,23 @@
+import { useState } from 'react'
 import tickImage from '../assets/images/double-tick.png'
 import nodeImage from '../assets/images/notes.png'
 import plusImage from '../assets/images/plus.png'
 
 const Header = () => {
+  const [input, setInput] = useState('')
+
+  const handleInput = (e) => {
+    setInput(e.target.value)
+  }
+
   return (
     <div>
       <div>
         <form className='flex items-center bg-gray-100 px-4 py-4 rounded-md'>
           <img src={nodeImage} className='w-6 h-6' alt='Add todo' />
           <input
+            value={input}
+            
             type='text'
             placeholder='Type your todo'
             className='w-full text-lg px-4 py-1 border-none outline-none bg-gray-100 text-gray-500'
