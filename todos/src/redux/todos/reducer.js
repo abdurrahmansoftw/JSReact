@@ -16,7 +16,14 @@ const nextTodoId = (todos) => {
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return [...state, { id: nextTodoId(state) }]
+      return [
+        ...state,
+        {
+          id: nextTodoId(state),
+          text: action.payload,
+          completed: false,
+        },
+      ]
 
     case TOGGLE_TODO:
       return state.map((todo) =>
