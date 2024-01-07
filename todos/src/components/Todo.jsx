@@ -1,6 +1,14 @@
+import { useDispatch } from 'react-redux'
 import cancelImage from '../assets/images/cancel.png'
+import { toggle } from '../redux/todos/actions'
 const Todo = ({ todo }) => {
   const { text, completed, color, id } = todo
+
+  const dispatch = useDispatch()
+  const handleSttusChange = (todoId) => {
+    dispatch(toggle(todoId))
+  }
+
   return (
     <div className='flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0'>
       <div
@@ -10,6 +18,7 @@ const Todo = ({ todo }) => {
         <input
           checked={completed}
           type='checkbox'
+          onChange={() => handleSttusChange(id)}
           className='opacity-0 absolute rounded-full'
         />
         {completed && (
